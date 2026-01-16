@@ -1,0 +1,20 @@
+def is_prime(x):
+    if x<2:
+        return false
+    for i in range(2, int(x**0.5)+1):
+        if x%i==0:
+        return false
+    return true
+
+
+
+n= int(input("Enter a number:"))
+    digits= len(str(n))
+
+start=10** digits-1
+end=10** (digits-1)
+
+for num in range(start, end -1,-1):
+    if is_prime(num):
+        print(num)
+        break
