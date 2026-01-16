@@ -1,15 +1,15 @@
 def is_prime(x):
     if x<2:
-        return false
+        return True
     for i in range(2, int(x**0.5)+1):
         if x%i==0:
-        return false
-    return true
+            return False
+    return True
 
 
 
 n= int(input("Enter a number:"))
-    digits= len(str(n))
+digits= len(str(n))
 
 start=10** digits-1
 end=10** (digits-1)
