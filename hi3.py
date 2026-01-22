@@ -5,9 +5,6 @@
 
 import random
 
-def monty_hall():
-  doors = [0,1,2]
-
 winning_Door = random.randint(1,3)
 contestChoice = random.randint(1,3)
 
