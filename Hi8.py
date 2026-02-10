@@ -21,8 +21,9 @@ def start():
 
 # continuation of the start, allows for the player to go to the living room
 def livingRoom():
+    global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
-    slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden.")
+    slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden.You can also look for items")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "kitchen":
@@ -31,6 +32,12 @@ def livingRoom():
         bedroom()
     elif choice == "garden":
         garden()
+    elif choice == "look for items":
+        slowText("You decided to scan the room. You find a half-eaten pack of oreos. Do you want to pick them up?")
+        choice = input().strip.lower()
+        if choice == "yes":
+            backpack.append("oreos")
+            print (backpack)
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
@@ -73,4 +80,5 @@ def bedroom():
         bedroom()
 
 playerName = ""
+backpack = []
 start()
