@@ -38,6 +38,7 @@ def livingRoom():
         if choice == "yes":
             backpack.append("oreos")
             print (backpack)
+        livingRoom()
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
@@ -78,7 +79,13 @@ def bedroom():
         print("Invalid choice. Please try again.")
         time.sleep(3)
         bedroom()
-
+def searchBackpack(pack, item):
+    #this function should return true if item is inside the list named 'pack'
+    found = False
+    for i in range (len(pack)):
+        if pack [i] == item:
+            found = True
+    return found
 playerName = ""
 backpack = []
 start()
