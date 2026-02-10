@@ -33,6 +33,9 @@ def livingRoom():
     elif choice == "garden":
         garden()
     elif choice == "look for items":
+        if searchBackpack(backpack,"oreos"):
+            slowText("You decided to scan the room. And you fond nothing.")
+        else:
         slowText("You decided to scan the room. You find a half-eaten pack of oreos. Do you want to pick them up?")
         choice = input().strip.lower()
         if choice == "yes":
