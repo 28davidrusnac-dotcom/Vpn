@@ -23,6 +23,7 @@ def start():
 def livingRoom():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
+    print("backpack: {}".format(backpack))
     slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden.You can also look for items")
     slowText("What would you like to do?")
     choice = input().strip().lower()
