@@ -50,11 +50,22 @@ def livingRoom():
 
 def kitchen():
     os.system('cls' if os.name == 'nt' else 'clear')
-    slowText("You are in the kitchen. There is a door to the living room.")
+    print("backpack: {}".format(backpack))
+    slowText("You are in the kitchen. There is a door to the living room.You can also look for items")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "living room":
         livingRoom()
+    elif choice == "look for items":
+        if searchBackpack(backpack,"paper clip"):
+            slowText("You decided to scan the room. And you found nothing.")
+        else:
+            ("You decided to scan the room. You open uo a junk draw and and find a paperclip. Do you want to pick them up?")
+        choice = input().strip.lower()
+        if choice == "yes":
+            backpack.append("paper clip")
+            print (backpack)
+        kitchen()
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
@@ -90,6 +101,9 @@ def searchBackpack(pack, item):
         if pack [i] == item:
             found = True
     return found
+
+
+
 playerName = ""
 backpack = []
 start()
