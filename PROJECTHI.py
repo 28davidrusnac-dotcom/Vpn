@@ -20,6 +20,25 @@ def create_fighter(name):
     defense = int(input(f"Enter {name}'s defense: "))
     speed = int(input(f"Enter {name}'s speed: "))
 
-    return [health,attack, defense, speed]
+    return [health, attack, defense, speed]
 
 print("Battle Simulator")
+
+fighter1= create_fighter("Fighter 1")
+fighter2= create_fighter("Fighter 2")
+
+round_number = 1
+
+while fighter1[0]>0 and fighter2[0]>0:
+print("Round {round_number}")
+
+if fighter1[3] >= fighter2[3]:
+    first=fighter1
+    second=fighter2
+    first_name="fighter1"
+    second_name="fighter2"
+else:
+    first=fighter2
+    second=fighter1
+    first_name="fighter2"
+    first_name="fighter1"
