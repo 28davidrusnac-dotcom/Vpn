@@ -42,3 +42,23 @@ else:
     second=fighter1
     first_name="fighter2"
     first_name="fighter1"
+
+damage= calculate_damage(first,second)
+second[0]-= damage
+print(f{first_name} attacks for {damage} damage.")
+print(f{second_name} health: {max(first[0], 0)}")
+
+if second[0] >0:
+    damage= calculate_damage(second,first)
+    first[0] -=damage
+    print(f"{second_name} attacks for {damage} damage.")
+    print(f"{first_name} health: {max(first[0], 0)}")
+
+round_number +=1
+
+print("Battles over")
+
+if fighter1[0]>0:
+    print("Fighter 1 wins!!!!")
+else:
+    print("fighter 2 wins!!!!")
